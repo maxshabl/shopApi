@@ -30,8 +30,6 @@ services:
       - ./:/var/www
     links:
       - mysql
-      - redis
-      - elasticsearch
     environment:
       DB_PORT: "3306"
       DB_HOST: "mysql"
