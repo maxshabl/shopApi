@@ -8,5 +8,13 @@ namespace App\Entities;
  */
 class User
 {
+    /**
+     * @var int
+     */
+    public $id = 1;
 
+    /**
+     * @var string
+     */
+    public $password = 'admin';
 }

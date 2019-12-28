@@ -2,21 +2,17 @@
 
 namespace App\Entities;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- *
- * @ORM\Entity
- * @ORM\Table(name="Order")
+ * Class Reserve
  * @package App\Entities
  */
-class Order
+class Reserve
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\ManyToOne(targetEntity="Order", inversedBy="reserve")
+     * @ORM\JoinColumn(name="order_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $id;
 
@@ -38,22 +34,12 @@ class Order
     /**
      * @ORM\Column(type="integer")
      */
-    private $price;
+    private $orderId;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $reserveId;
+    private $productId;
 
-    /**
-     * @var ArrayCollection|Reserve[]
-     * @ORM\OneToMany(targetEntity="Reserve", mappedBy="Order", orphanRemoval=true, cascade={"persist"})
-     * @ORM\OrderBy({"date" = "ASC"})
-     */
-    private $reserve;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $userId;
 }

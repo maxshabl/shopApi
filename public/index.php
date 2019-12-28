@@ -7,6 +7,7 @@ use Zend\Diactoros\ServerRequest;
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
+require 'public/doctrine.php';
 
 $containerBuilder = new DI\ContainerBuilder();
 $containerBuilder->addDefinitions('config/container.php');
