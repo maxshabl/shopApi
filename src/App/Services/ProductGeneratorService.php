@@ -3,15 +3,15 @@
 namespace App\Services;
 
 /**
- * Class ProductService
+ * Class ProductGeneratorService
  * @package App\Services
  */
-class ProductService
+class ProductGeneratorService
 {
     /**
      * @return string
      */
-    public function hello()
+    public function generateProducts()
     {
         return 'Hello';
     }

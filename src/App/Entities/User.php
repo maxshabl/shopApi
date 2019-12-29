@@ -2,19 +2,33 @@
 
 namespace App\Entities;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Class User
- * @package App\Entities
- */
+ *
+ * @ORM\Entity(repositoryClass="UserRepository")
+ * @ORM\Table(name="User")
+ **/
 class User
 {
     /**
-     * @var int
+     * @ORM\Id
+     * @ORM\Column(type="integer", name="id", nullable=false)
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id = 1;
+    private $id = 1;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", nullable=false)
      */
-    public $password = 'admin';
+    private $password = 'admin';
+
+    /**
+     * @param string $token
+     * @return bool
+     */
+    public function checkToken(string $token): bool
+    {
+        return md5($this->password) === $token;
+    }
 }

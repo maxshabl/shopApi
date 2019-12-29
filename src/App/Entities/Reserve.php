@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ReserveRepository")
  * @ORM\Table(name="Reserve")
  * @package App\Entities
  */
@@ -43,6 +43,4 @@ class Reserve
      * @ORM\Column(type="integer")
      */
     private $productId;
-
-
 }
