@@ -5,14 +5,17 @@ namespace App\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class Reserve
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="Reserve")
  * @package App\Entities
  */
 class Reserve
 {
     /**
-     * @ORM\ManyToOne(targetEntity="Order", inversedBy="reserve")
-     * @ORM\JoinColumn(name="order_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 

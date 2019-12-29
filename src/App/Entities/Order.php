@@ -41,11 +41,6 @@ class Order
     private $price;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $reserveId;
-
-    /**
      * @var ArrayCollection|Reserve[]
      * @ORM\OneToMany(targetEntity="Reserve", mappedBy="Order", orphanRemoval=true, cascade={"persist"})
      * @ORM\OrderBy({"date" = "ASC"})
